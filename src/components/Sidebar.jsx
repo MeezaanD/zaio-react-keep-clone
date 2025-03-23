@@ -14,14 +14,14 @@ function Sidebar({ showArchived, toggleView }) {
 
 	return (
 		<div
-			className={`sidebar ${hovered ? "expanded" : ""}`}
+			className={`sidebar`}
 			onMouseEnter={() => setHovered(true)}
 			onMouseLeave={() => setHovered(false)}
 		>
 			{sidebarItems.map((item) => (
 				<div
 					key={item.key}
-					className={`sidebar-item ${activeItem === item.key ? "sidebar-active-item" : ""}`}
+					className={`sidebar-item ${activeItem === item.key ? "active" : ""}`}
 					onClick={() => {
 						setActiveItem(item.key);
 						if (item.key === "archive" || item.key === "notes") {
@@ -29,7 +29,7 @@ function Sidebar({ showArchived, toggleView }) {
 						}
 					}}
 				>
-					<span className={`material-symbols-outlined ${activeItem === item.key ? "active" : ""}`}>
+					<span className={`material-symbols-outlined`}>
 						{item.icon}
 					</span>
 					{hovered && <span className="sidebar-text">{item.label}</span>}

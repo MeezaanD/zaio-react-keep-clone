@@ -33,7 +33,6 @@ function NoteForm({ addNote }) {
 			color: '#ffffff'
 		});
 
-		// Collapse the form
 		setIsExpanded(false);
 	};
 
@@ -45,7 +44,6 @@ function NoteForm({ addNote }) {
 
 	const closeForm = () => {
 		setIsExpanded(false);
-		// Only reset if no content
 		if (note.title.trim() === '' && note.content.trim() === '') {
 			setNote({
 				title: '',

@@ -8,58 +8,66 @@
 	font-family: "Roboto", sans-serif;
 }
 
+/* Icon styles */
 .material-symbols-outlined {
-	padding: 10px;
-}
-
-.small-icon {
-	color: black;
-	font-size: 1.1rem;
-}
-
-/* Hover and tooltip styles */
-.hover:hover {
-	background: #f1f3f4;
-	color: black;
+	padding: 5px;
+	font-size: 30px;
+	color: #5f6368;
 	border-radius: 50%;
 	cursor: pointer;
 }
 
+.small-icon {
+	color: black;
+	font-size: 16px;
+	padding: 8px;
+}
+
+/* Hover effects */
+.hover:hover {
+	background-color: rgba(95, 99, 104, 0.1);
+}
+
+/* Tooltip */
 .tooltip {
 	position: relative;
-	display: inline;
+	display: inline-block;
+	margin: 0 4px;
 }
 
 .tooltip-text {
 	position: absolute;
-	left: 0;
-	top: 100%;
-	font-size: 0.78rem;
-	background-color: #323232;
+	background-color: #4a4a4a;
 	color: white;
-	opacity: 0.8;
-	padding: 5px;
+	padding: 5px 8px;
+	border-radius: 4px;
+	font-size: 11px;
+	bottom: 125%;
+	left: 50%;
+	transform: translateX(-50%);
 	white-space: nowrap;
-	border-radius: 5px;
 	visibility: hidden;
+	opacity: 0;
+	transition: opacity 0.2s;
 	z-index: 1;
 }
 
 .tooltip:hover .tooltip-text {
 	visibility: visible;
+	opacity: 0.8;
 }
 
-/* Navbar styles */
+/* Navbar */
 nav {
 	display: flex;
 	justify-content: space-between;
+	gap: 20px;
 	align-items: center;
 	height: 64px;
 	border-bottom: 1px solid #dadce0;
 	padding: 8px;
 	margin: 0 10px;
 	color: #5f6368;
-	flex-wrap: wrap;
 }
 
 .logo-area {
@@ -68,7 +76,7 @@ nav {
 }
 
 .logo-text {
-	font-size: 1.2rem;
+	font-size: 1.5rem;
 }
 
 .search-area {
@@ -88,6 +96,7 @@ nav {
 	height: 95%;
 	font-size: 1rem;
 	margin: 0 10px;
+	outline: none;
 }
 
 .settings-area,
@@ -101,7 +110,7 @@ nav {
 	margin-left: 10px;
 }
 
-/* Sidebar styles */
+/* Sidebar */
 .sidebar {
 	position: fixed;
 	left: 0;
@@ -117,13 +126,13 @@ nav {
 	z-index: 1000;
 }
 
-.sidebar-hover {
+.sidebar:hover {
 	box-shadow: 0 1px 2px 0 rgba(60, 64, 67, 0.302),
 		0 2px 6px 2px rgba(60, 64, 67, 0.149);
 	background: white;
 }
 
-.sidebar .sidebar-item {
+.sidebar-item {
 	padding: 3px 0;
 	display: flex;
 	align-items: center;
@@ -148,6 +157,13 @@ nav {
 	border-bottom-right-radius: 25px;
 }
 
+.sidebar-item.active {
+	background-color: #fef0c3;
+	border-top-right-radius: 25px;
+	border-bottom-right-radius: 25px;
+}
+
+/* Form Container */
 .form-container {
 	background: #fff;
 	max-width: 598px;
@@ -158,8 +174,6 @@ nav {
 	border-radius: 8px;
 	position: relative;
 	left: 80px;
-	/* Adjust this according to the sidebar width */
-	top: 0;
 }
 
 .form-container:hover {
@@ -167,7 +181,7 @@ nav {
 		0 4px 8px 3px rgba(60, 64, 67, 0.149);
 }
 
-/* Collapsed form styles */
+/* Collapsed form */
 .collapsed-form {
 	display: flex;
 	align-items: center;
@@ -179,7 +193,6 @@ nav {
 .note-input {
 	border: none;
 	font-size: 14px;
-	font-family: 'Roboto', Arial, sans-serif;
 	color: #202124;
 	background: transparent;
 	width: 100%;
@@ -187,7 +200,7 @@ nav {
 	outline: none;
 }
 
-/* Expanded form styles */
+/* Expanded form */
 .form {
 	display: flex;
 	flex-direction: column;
@@ -208,7 +221,6 @@ nav {
 	border: none;
 	font-size: 16px;
 	font-weight: 500;
-	font-family: 'Roboto', Arial, sans-serif;
 	color: #202124;
 	background: transparent;
 	padding: 10px 0;
@@ -220,7 +232,6 @@ nav {
 .content-textarea {
 	border: none;
 	font-size: 14px;
-	font-family: 'Roboto', Arial, sans-serif;
 	color: #202124;
 	background: transparent;
 	min-height: 40px;
@@ -231,11 +242,11 @@ nav {
 	width: 100%;
 }
 
-/* Action buttons styles */
+/* Action buttons */
 .form-actions {
 	display: flex;
 	align-items: center;
-	justify-content: space-between;
+	justify-content: flex-end;
 	margin-top: 8px;
 	width: 100%;
 }
@@ -246,54 +257,7 @@ nav {
 	align-items: center;
 }
 
-.material-symbols-outlined {
-	font-size: 18px;
-	color: #5f6368;
-	padding: 5px;
-	border-radius: 50%;
-	cursor: pointer;
-}
-
-.material-symbols-outlined.hover:hover {
-	background-color: rgba(95, 99, 104, 0.1);
-}
-
-.small-icon {
-	font-size: 16px;
-	padding: 8px;
-}
-
-/* Tooltip styles */
-.tooltip {
-	position: relative;
-	display: inline-block;
-	margin: 0 4px;
-}
-
-.tooltip-text {
-	visibility: hidden;
-	background-color: #4a4a4a;
-	color: #fff;
-	text-align: center;
-	padding: 5px 8px;
-	border-radius: 4px;
-	position: absolute;
-	z-index: 1;
-	bottom: 125%;
-	left: 50%;
-	transform: translateX(-50%);
-	white-space: nowrap;
-	font-size: 11px;
-	opacity: 0;
-	transition: opacity 0.2s;
-}
-
-.tooltip:hover .tooltip-text {
-	visibility: visible;
-	opacity: 1;
-}
-
-/* Color picker styles */
+/* Color picker */
 .color-input {
 	opacity: 0;
 	position: absolute;
@@ -327,16 +291,14 @@ nav {
 	display: none;
 }
 
-/* Notes styles */
+/* Notes grid */
 .notes {
 	display: flex;
-	justify-content: start;
 	flex-wrap: wrap;
+	justify-content: flex-start;
 	padding: 0 50px;
 	position: relative;
 	left: 80px;
-	/* Adjust this according to the sidebar width */
-	top: 0;
 }
 
 .note {
@@ -377,11 +339,6 @@ nav {
 	visibility: visible;
 }
 
-.note-footer .material-symbols-outlined {
-	color: #5f6368;
-	font-size: 0.9rem;
-}
-
 .note .check-circle {
 	position: absolute;
 	top: -20px;
@@ -398,7 +355,12 @@ nav {
 	opacity: 1;
 }
 
-/* Modal styles */
+.empty-state {
+	text-align: center;
+	margin-top: 50px;
+}
+
+/* Modal */
 .modal {
 	position: fixed;
 	top: 0;
@@ -421,15 +383,10 @@ nav {
 	visibility: visible;
 }
 
-/* Animation styles */
+/* Animation */
 .note-archive-animation {
 	transform: scale(0.8);
 	opacity: 0;
-}
-
-/* Input focus styles */
-input:focus {
-	outline: none;
 }
 
 /* Media Queries */
@@ -458,10 +415,6 @@ input:focus {
 
 	.sidebar {
 		width: 60px;
-	}
-
-	.sidebar-hover {
-		width: 200px;
 	}
 
 	.sidebar .sidebar-item .sidebar-text {
@@ -493,27 +446,24 @@ input:focus {
 	nav {
 		flex-direction: column;
 		align-items: flex-start;
+		height: auto;
+	}
+
+	.logo-area {
+		margin-bottom: 10px;
 	}
 
 	.search-area {
-		margin-left: 10px;
-		width: auto;
+		margin-left: 0;
+		width: 100%;
 	}
 
 	.search-area input {
-		display: none !important;
-	}
-
-	.search-area .material-symbols-outlined {
 		display: block;
 	}
 
 	.sidebar {
 		width: 50px;
-	}
-
-	.sidebar-hover {
-		width: 150px;
 	}
 
 	.form-container {
@@ -523,6 +473,7 @@ input:focus {
 
 	.notes {
 		left: 50px;
+		padding: 0 10px;
 	}
 
 	.note {
